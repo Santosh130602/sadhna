@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Request</title>
+</head>
+<body>
+    <form action="<%= formData.spURL %>" method="POST">
+        <input type="hidden" name="encData" value="<%= formData.encData %>">
+        <input type="hidden" name="clientCode" value="<%= formData.clientCode %>">
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>

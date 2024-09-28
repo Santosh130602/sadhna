@@ -94,8 +94,8 @@ const Gallery = () => {
                 backgroundImage: `url(${backgroundImage})`,
             }}>
                 {/* Overlay for darkening effect */}
-                <div className="absolute inset-0 bg-black opacity-50"></div>
-                <h1 className="text-white text-6xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>Gallery</h1>
+                <div className="absolute inset-0 bg-black opacity-80"></div>
+                <h1 className="text-yellow-300 text-6xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>Gallery</h1>
             </div>
 
             {/* Main Content Section */}

@@ -1,4 +1,4 @@
-import { Button } from 'pg-test-project';
+
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import bgimg from "../assets/hero1.png"; // Import your background image
@@ -13,14 +13,14 @@ const Support = () => {
 
   return (
     <div
-      className="support relative bg-cover bg-center h-[40rem]"
+      className="support relative bg-cover bg-center h-[50rem]"
       style={{
         backgroundImage: `url(${bgimg})`,
         backgroundAttachment: 'fixed', // Keep the background fixed
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="container mx-auto text-center text-white p-6">
+        <div className="container mx-auto text-center text-white p-6 mt-64 mb-64">
           <h2 className="text-4xl font-bold mb-16" style={{ fontFamily: 'Gowun Batang, serif' }}>
             <span className="text-yellow-500">SUPPORT</span> SADHANASHRI KUTUMB
           </h2>

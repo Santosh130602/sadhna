@@ -3,8 +3,8 @@ import React from "react";
 const TermsAndConditions = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-4xl p-8 md:p-12 my-10">
-        <h1 className="text-6xl text-center text-red-400 mb-16">
+      <div className="bg-white shadow-lg rounded-lg w-full max-w-4xl p-8 md:p-12 my-10"  style={{ fontFamily: 'Gowun Batang, serif' }}>
+        <h1 className="text-6xl text-center text-red-400 mb-16"  style={{ fontFamily: 'Gowun Batang, serif' }}>
           Terms and Conditions
         </h1>
         <div className="text-gray-400 space-y-6 leading-relaxed">

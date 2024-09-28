@@ -7,7 +7,8 @@ const path = require("path");
 const database = require("./config/database");
 
 const userRouter = require("./routers/UserRouter");
-const paymentRoutes = require("./routers/paymentRoute");
+// const paymentRoutes = require("./routers/paymentRoute");
+const joiningRoutes = require("./routers/joiningForm")
 const { errorHandler } = require("./middleware/errorMiddleware");
 
 // Initialize the Express app
@@ -33,7 +34,8 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use("/api/users", userRouter);
-app.use("/api/payment", paymentRoutes);
+app.use("/api/join",joiningRoutes);
+// app.use("/api/payment", paymentRoutes);
 
 
 // Error handler middleware

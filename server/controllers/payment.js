@@ -865,8 +865,7 @@
 const axios = require('axios');
 const crypto = require('crypto');
 const Transaction = require('../models/transition');  // Import Transaction model
-
-
+const asyncHandler = require("express-async-handler")
 
 function generateTransactionId() {
     const timestamp = Date.now();
@@ -877,7 +876,7 @@ function generateTransactionId() {
 
 
 // Create Order Function
-exports.createOrder = async (req, res) => {
+const createOrder = asyncHandler(async (req, res) => {
     try {
         const {
             userId,
@@ -973,12 +972,12 @@ exports.createOrder = async (req, res) => {
             success: false
         });
     }
-};
+});
 
 
 
 
-exports.checkPaymentStatus = async (req, res) => {
+const checkPaymentStatus = asyncHandler(async (req, res) => {
     try {
         const { transactionId, merchantId } = req.body;
         const keyIndex = 1;
@@ -1027,6 +1026,6 @@ exports.checkPaymentStatus = async (req, res) => {
             success: false
         });
     }
-};
+});
 
-
+module.exports = {createOrder, checkPaymentStatus};

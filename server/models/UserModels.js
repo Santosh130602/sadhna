@@ -23,7 +23,7 @@ const UserSchema = mongoose.Schema({
         type:Boolean,
         default:false,
     },
-    transition:[{
+    transaction:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Transaction",
     },],

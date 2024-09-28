@@ -58,15 +58,15 @@ const Event = () => {
         }}
       >
         {/* Overlay for darkening effect */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <h1 className="text-white text-6xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>Events</h1>
+        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <h1 className="text-yellow-300 text-6xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>Events</h1>
       </div>
 
       {/* Main Content Section */}
       <div className="bg-white py-10">
         <div className="container mx-auto px-4">
           {/* Upcoming Events Section */}
-          <h2 className="text-4xl font-bold text-center mb-12">Upcoming Events</h2>
+          <h2 className="text-4xl font-bold text-center mb-12" style={{ fontFamily: 'Gowun Batang, serif' }}>Upcoming Events</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {upcomingEvents.map((program) => (
               <div 
@@ -83,7 +83,7 @@ const Event = () => {
           </div>
 
           {/* Past Events Section */}
-          <h2 className="text-4xl font-bold text-center mb-12">Past Events</h2>
+          <h2 className="text-4xl font-bold text-center mb-12" style={{ fontFamily: 'Gowun Batang, serif' }}>Past Events</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pastEvents.map((program) => (
               <div key={program.id} className="bg-white p-6 rounded-lg shadow-md">

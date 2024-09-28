@@ -3,10 +3,12 @@ const jwt = require("jsonwebtoken")
 const asyncHandler = require("express-async-handler")
 const User = require("../models/UserModels")
 
-const generateToken = (id) =>{
-    return jwt.sign({id}, process.env.JWT_SECRET,{expiresIn: "2d",
-})
-}
+const generateToken = (id, isAdmin) => {
+  return jwt.sign({ id, isAdmin }, process.env.JWT_SECRET, { expiresIn: '2d' });
+};
+
+
+// const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
 
 // const protect = asyncHandler(async(req,res,next) =>{

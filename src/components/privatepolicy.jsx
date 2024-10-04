@@ -4,19 +4,19 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-4xl p-8 md:p-12 my-10"  style={{ fontFamily: 'Gowun Batang, serif' }}>
-        <h1 className="text-6xl text-center text-red-400 mb-16">
+    <div className="flex justify-center bg-yellow-100 items-center min-h-screen bg-gray-100">
+      <div className="bg-yellow-200 shadow-lg rounded-lg w-full max-w-4xl p-8 md:p-12 my-10"  style={{ fontFamily: 'Gowun Batang, serif' }}>
+        <h1 className="text-6xl text-center text-red-800 mb-16">
           Privacy Policy
         </h1>
-        <div className="text-gray-400 space-y-6 leading-relaxed">
+        <div className="text-gray-900 space-y-6 leading-relaxed">
           <p className="text-lg">
             We are committed to protecting your privacy. This privacy policy
             explains how we collect, use, and protect the personal information
             you provide to us.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             1. Information We Collect
           </h2>
           <p>
@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
             voluntarily.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             2. Use of Information
           </h2>
           <p>
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
             communicate updates about our programs and events.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             3. Data Security
           </h2>
           <p>
@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
             control.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             4. Sharing Information
           </h2>
           <p>
@@ -60,20 +60,20 @@ const PrivacyPolicy = () => {
             your information confidential.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             5. Refund Policy
           </h2>
           <p>
             Thank you for your interest in our services. Please note that all
             payments made are non-refundable. Once a transaction has been
             processed, we do not provide refunds or exchanges for any services
-            rendered. We recommend that you carefully review your order before
+            rendered. We recommend that you carefully review your choice before
             completing the payment process to ensure that it meets your
             requirements. If you have any questions or concerns about your
-            order, please contact our support team before making your payment.
+            choice, please contact our support team before making your payment.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             6. Changes to Privacy Policy
           </h2>
           <p>
@@ -83,12 +83,12 @@ const PrivacyPolicy = () => {
             updates.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             7. Contact Information
           </h2>
           <p>
             For any privacy concerns or questions, you can contact us at
-            sk4bharat@gmail.com.
+            sknyas.info@gmail.com
           </p>
         </div>
       </div>

@@ -2,12 +2,12 @@ import React from "react";
 
 const TermsAndConditions = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-4xl p-8 md:p-12 my-10"  style={{ fontFamily: 'Gowun Batang, serif' }}>
-        <h1 className="text-6xl text-center text-red-400 mb-16"  style={{ fontFamily: 'Gowun Batang, serif' }}>
+    <div className="flex justify-center bg-yellow-100 items-center min-h-screen bg-gray-100">
+      <div className="bg-yellow-200 shadow-lg rounded-lg w-full max-w-4xl p-8 md:p-12 my-10"  style={{ fontFamily: 'Gowun Batang, serif' }}>
+        <h1 className="text-6xl text-center text-red-800 mb-16"  style={{ fontFamily: 'Gowun Batang, serif' }}>
           Terms and Conditions
         </h1>
-        <div className="text-gray-400 space-y-6 leading-relaxed">
+        <div className="text-gray-900 space-y-6 leading-relaxed">
           <p className="text-lg">
             Welcome to our organization. By accessing or using our website, you
             agree to comply with and be bound by the following terms and
@@ -15,7 +15,7 @@ const TermsAndConditions = () => {
             our website.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             1. Acceptance of Terms
           </h2>
           <p>
@@ -24,7 +24,7 @@ const TermsAndConditions = () => {
             website.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             2. Guidance and Awareness
           </h2>
           <p>
@@ -34,7 +34,7 @@ const TermsAndConditions = () => {
             seek professional assistance when needed.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             3. User Responsibilities
           </h2>
           <p>
@@ -43,7 +43,7 @@ const TermsAndConditions = () => {
             or our services and to respect the rights of others.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             4. Limitation of Liability
           </h2>
           <p>
@@ -54,7 +54,7 @@ const TermsAndConditions = () => {
             possibility of such damages.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             5. Changes to Terms
           </h2>
           <p>
@@ -63,7 +63,7 @@ const TermsAndConditions = () => {
             encourage you to review these terms periodically.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             6. Governing Law
           </h2>
           <p>
@@ -72,12 +72,12 @@ const TermsAndConditions = () => {
             subject to the exclusive jurisdiction of the courts of India.
           </p>
 
-          <h2 className="text-2xl font-semibold text-red-300">
+          <h2 className="text-2xl font-semibold text-red-500">
             7. Contact Information
           </h2>
           <p>
             If you have any questions regarding these terms, feel free to
-            contact us via email at sk4bharat@gmail.com.
+            contact us via email at sknyas.info@gmail.com
           </p>
         </div>
       </div>

@@ -3,32 +3,50 @@ const InternshipApplication = require("../models/internshipForm");
 
 
 
+
 const createInternshipApplication = async (req, res) => {
   try {
-    // Extract data from the request body and file upload
-    const { name, fatherName, gender, phone, email, dob, address, appliedFor, education } = req.body;
-    const photo = req.file ? req.file.path : null;
+    // Extract data from the request body
+    const { 
+      userId,
+      name, 
+      fatherName, 
+      gender, 
+      phone, 
+      email, 
+      dob, 
+      aadhar,
+      address, 
+      appliedFor, 
+      education, 
+      photo 
+    } = req.body;
 
-    if (!photo) {
-      return res.status(400).json({ error: "Photo is required" });
+    if (!userId || !name || !fatherName || !gender || !phone || !email || !dob || !appliedFor || !photo) {
+      return res.status(400).json({ error: "All fields are required" });
     }
 
-    // Create a new internship application document
+    if (!photo) {
+      return res.status(400).json({ error: "Photo URL is required" });
+    }
+
     const application = new InternshipApplication({
+      userId,
       name,
       fatherName,
       gender,
       phone,
       email,
       dob,
-      address: JSON.parse(address), // Convert address back to object
-      photo,
+      aadhar,
+      address, 
+      photo, 
       appliedFor,
       education: {
-        highSchool: JSON.parse(education.highSchool),
-        intermediate: JSON.parse(education.intermediate),
-        graduation: JSON.parse(education.graduation),
-        postGraduation: JSON.parse(education.postGraduation),
+        highSchool: education.highSchool, 
+        intermediate: education.intermediate,
+        graduation: education.graduation,
+        postGraduation: education.postGraduation,
       },
     });
 
@@ -49,15 +67,19 @@ const createInternshipApplication = async (req, res) => {
 
 
 
+
+
 const registerVayamParticipant = async (req, res) => {
   try {
     const {
+      isStudent,
       name,
       fatherName,
       gender,
       aadhar,
       email,
       phone,
+      
       dob,
       permanentAddress,
       education,
@@ -68,6 +90,7 @@ const registerVayamParticipant = async (req, res) => {
 
     // Create a new participant entry
     const newRegistration = new VayamRegistration({
+      isStudent,
       name,
       fatherName,
       gender,
@@ -104,7 +127,40 @@ const registerVayamParticipant = async (req, res) => {
 
 
 
+
+
+
+
+// ******************************  ADMIN CONTROLLER ***************************
+
+const getAllInternshipApplications = async (req, res) => {
+  try {
+    const applications = await InternshipApplication.find();
+    return res.status(200).json(applications);
+  } catch (error) {
+    console.error('Error fetching internship applications:', error);
+    return res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+
+
+const getAllVayamApplications = async (req, res) => {
+  try {
+    const applications = await VayamRegistration.find();
+    return res.status(200).json(applications);
+  } catch (error) {
+    console.error('Error fetching internship applications:', error);
+    return res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+
+
+
 module.exports = {
   createInternshipApplication,
-  registerVayamParticipant
+  registerVayamParticipant,
+  getAllInternshipApplications,
+  getAllVayamApplications
 };

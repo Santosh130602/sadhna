@@ -1,73 +1,145 @@
 
+
+
+
+// import React from 'react';
+// import backgroundImage from "../assets/hero9.jpeg"; // Use the same background image
+// import FooterBackground from "../assets/bg10.png"; 
+
+// const OurProject = () => {
+//   return (
+//     <div className="relative">
+
+//       <div className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative inset-0 -z-10" style={{
+//           backgroundImage: `url(${backgroundImage})`,
+//         }}
+//       >
+//         <div className="absolute inset-0 bg-black opacity-80"></div>
+//         <h1 className="text-yellow-300 text-6xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>
+//           Our Projects
+//         </h1>
+//       </div>
+
+//       {/* Main content section with a background image */}
+//       <div className="relative text-lime-400 py-10" style={{
+//         backgroundImage: `url(${FooterBackground})`,
+//         backgroundPosition: 'center',
+//         backgroundSize: 'cover',
+//         backgroundRepeat: 'repeat',
+//       }}>
+
+//         {/* Overlay div to apply background color on top of the bg image */}
+//         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+
+//         {/* Content container */}
+//         <div className="relative z-10 shadow-lg bg-neutral-900 rounded-xl p-8 max-w-4xl mx-auto text-center" >
+//           <div className="text-white space-y-6 text-lg">
+//             <h1 className="text-yellow-400 text-6xl font-thin relative z-10">
+//               गुरूकुल Gurukul
+//             </h1> 
+//             <p>
+//             भारत जिस आधार पर खड़े होकर भारत को और दुनिया को यह संदेश देता है कि "यदा यदा ही धर्मस्य ग्लानिर्भवति भारत.... वह आधार है गुरुकुल | यह आधुनिक विद्यालयों का प्रतिरूप या पर्यायवाची नहीं है। जब संसार के विभिन्न कोनों में मानव जाति वाद-विवाद में उलझी हुई थी तब हमने संवाद की परंपरा का अद्वितीय प्रमाण प्रस्तुत कर वेदों की रचना कर डाली और यह संदेश भी प्रचारित कर दिया कि "वादे - जायते तत्व बोधः " । हमारे जानने की यात्रा तब पूरी होती है जब हमें परम तत्व का बोध हो जाता है। तत्त्वत हम सभी भेद रहित अस्तित्व हैं। यह सीखने की प्रक्रिया जीवन पर्यंत चलती रहती है। हमारे गुरुकुल से कोई डिग्री नहीं बल्कि दृष्टि प्राप्त होती है। यहां विषयों को पढ़ाया जाता है उन्हें समझाने के लिए तथा विषयों से दूर रहने का प्रशिक्षण भी दिया जाता है। ऐसे प्रशिक्षण का लक्ष्य होता है, आध्यात्मिक जीवन का विकास और धर्म संरक्षित, निर्देशित व्यवहारिक जीवन की नीव रखना | हमारी चिंतन पद्धति उर्ध्वगामी और आधुनिक अर्थों में वैज्ञानिक है। हमने वस्तुओं के विज्ञान तक ही नहीं बल्कि संवेदना और भावना के विज्ञान का भी वृहद अध्ययन किया है। हमारे अध्ययन प्रक्रिया में स्वाध्याय अभ्यास और प्रदर्शन का समावेश है। हमारी परीक्षा में ज्ञान की परीक्षा है जानकारी की नहीं। सफलता का पैमाना केवल व्यक्तित्व और व्यवहार ही है। जीवन को शून्य में नहीं सहअस्तित्व में देखने की हमारी संकल्पना हमें प्रकृति का भोक्ता नहीं सहभागी बनाती है।
+//             </p>
+//               </div>
+//         </div>
+//         <div className="relative z-10 shadow-lg bg-neutral-900 rounded-xl p-8 max-w-4xl mt-10 mx-auto text-center" >
+//           <div className="text-white space-y-6 text-lg">
+
+//             <h1 className="text-lime-400 text-6xl font-thin relative z-10">
+//               गोकुल Gokul
+//             </h1>
+//             <p>
+//             मनुष्य का प्रकृति के साथ परस्पर निर्भरता का संबंध है और इस जैविक संबंध का संयोजक है गोवंश | गोवंश की महिमा का ही प्रभाव है कि हमारी धार्मिक, सांस्कृतिक और भौतिक उपलब्धियां का श्रेय गोवंश को ही देते हुए हमारे ऋषि मुनियों ने गाय को माता कहते हुए इनको देवों के लिए भी पूज्य बना दिया। मनुष्य जाति के प्रति कल्याण की भावना और संवेदना से युक्त गोवंश को हम केवल दूध देने वाला पशु कह कर अपनी ही अज्ञानता का परिचय देते हैं | हमारी अज्ञानता का प्रभाव हमारे भूत, वर्तमान और भविष्य पर पड़ता है। आज आधुनिक वैज्ञानिक खोजों ने गोवंश के प्रति हमारी प्राचीन, परंपरागत आस्था को प्रमाणित किया है और हमारी समझ को पुष्ट ही किया है। भारत के संपूर्ण सांस्कृतिक यात्रा का आधार गोवंश होने के कारण ही हमारी संस्कृति को ऋषि और कृषि संस्कृति भी कहा जाता है। गोवंश का संरक्षण हमारी अपनी माटी का संरक्षण तो है ही साथ-साथ यह हमारी अर्थव्यवस्था का संवर्धन भी है। भारतकी अर्थव्यवस्था का धुरी भी बन सकता है गोवंश संरक्षण। हमने अपने चिकित्सा शास्त्र को भी 'आयुर्वेद' कहकर अर्थ प्रकट किया है। गोवंश का संरक्षण करके हम मनुष्य जाति के अस्तित्व पर छा रहे संकट का समाधान प्रस्तुत कर सकते हैं। हमारी गौशाला हमेशा अनुशासन, आत्म नियंत्रण की सीख लेकर समृद्धि की राह दिखाती है और हमें स्वावलंबी बनाकर स्वराज की नींव रखती है। इस प्रकार हम राज नहीं रामराज्य अर्थात स्वराज की व्यवस्था को दृढ़ता प्रदान करते हैं।
+//             </p>
+
+//           </div>
+//         </div>
+//         <div className="relative z-10 shadow-lg bg-neutral-900 rounded-xl p-8 max-w-4xl mt-10 mx-auto text-center" >
+//           <div className="text-white space-y-6 text-lg">
+//            <h1 className="text-lime-400 text-6xl font-thin relative z-10">
+//               देवकुल Devkul
+//             </h1>
+//             <p>
+//             देवालय क्यों? यह प्रश्न भारत में पूछ कर स्वयं को ज्ञानी सिद्ध करने के प्रयास में संलग्न लोगों की बुद्धि पर अधिकतम प्रतिक्रिया केवल दया भाव प्रकट करना ही हो सकता है। सोमनाथ की पराजय का दंश सदियों तक झेलने के बाद उसके पुनर्निर्माण की प्रसन्नता का अनुमान भी ऐसी बुद्धि के लोग नहीं लगा सकते हैं। राम मंदिर की प्रतिष्ठा से भारत के जन- मन के उत्साह का सहज अनुमान लगाकर यह बात प्रमाणिकता से कही जा सकती है कि भारत में देवालयों का स्थान किसी भी अन्य प्रतिष्ठान से अधिक ही है। देवालय हमारी अस्मिता के प्रतीक हैं, हमारी आस्था के प्रतीक है, हमारे समाज जीवन की धुरी है। हमारे देवालय हमारे अस्तित्व की दृढ़ता और निरंतरता की प्रतिभूतियाँ हैं, इसीलिए तो विधर्मियों ने हमारे देवालयों को ही निशाना बनाया और इनको तोड़कर हमारा मान मर्दन किया। देवालयों में जाकर, हम स्वयं को समर्पित कर भाव- कुभाव के लिए क्षमा प्रार्थना करते हुए अपने मंगल की कामना करते हैं। देवालयों की घंटाध्वनि हमें एकता के सूत्र में बांधती है तथा सामूहिक प्रार्थना हमें सामाजिक जीवन को संस्कृति का साक्षात मूर्तरूप बनाती है। देवालयों का पुनर्जीवन, संरक्षण, संवर्धन और प्रतिष्ठा से हम भारत की भावी पीढ़ी को संस्कारवान और सामर्थ्यवान बनाने के पथ पर अग्रसर कर सकेंगे।
+//             </p>
+
+//           </div>
+//         </div>
+//       </div>
+
+//     </div>
+//   );
+// };
+
+// export default OurProject;
+
+
+
+
 import React from 'react';
-import backgroundImage from "../assets/hero9.jpeg"; // Use the same background image
+import backgroundImage from "../assets/hero9.jpeg";
+import FooterBackground from "../assets/bg10.png";
 
 const OurProject = () => {
   return (
     <div className="relative">
 
-      <div className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative" style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
-      >
-
+      {/* Hero Section */}
+      <div className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative inset-0 -z-10"
+        style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <h1 className="text-yellow-300 text-6xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>
           Our Projects
         </h1>
       </div>
 
-      {/* Main Content Section */}
-      {/* <div className="bg-white py-10">
-        <div className=" shadow-lg p-8 max-w-4xl mx-auto text-center " style={{ maxHeight: '80vh', overflowY: 'auto' }}>
-          <div className="text-gray-800 space-y-6 text-lg">
-            <h1 className="text-red-600 text-6xl font-thin relative z-10">
-          Page Not Found
-        </h1>
-            <p>
-              Please check the URL or return to the <a href="/" className="text-blue-500 underline">homepage</a>.
+      {/* Sections with sticky behavior */}
+      <div className="relative text-lime-400" style={{
+        backgroundImage: `url(${FooterBackground})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'repeat',
+      }}>
+
+
+        <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+
+        {/* Gurukul Section */}
+        <div className="h-screen flex items-center justify-center sticky top-0" style={{ fontFamily: 'Gowun Batang, serif' }}>
+          <div className="relative z-10 shadow-lg bg-neutral-900 rounded-xl h-4/6 p-8 max-w-4xl mx-auto text-center">
+            <h1 className="text-yellow-400 text-6xl mb-10  font-thin">
+              गुरूकुल Gurukul
+            </h1>
+            <p className='text-lg'>
+              भारत जिस आधार पर खड़े होकर भारत को और दुनिया को यह संदेश देता है कि "यदा यदा ही धर्मस्य ग्लानिर्भवति भारत.... वह आधार है गुरुकुल | यह आधुनिक विद्यालयों का प्रतिरूप या पर्यायवाची नहीं है। जब संसार के विभिन्न कोनों में मानव जाति वाद-विवाद में उलझी हुई थी तब हमने संवाद की परंपरा का अद्वितीय प्रमाण प्रस्तुत कर वेदों की रचना कर डाली और यह संदेश भी प्रचारित कर दिया कि "वादे - जायते तत्व बोधः " । हमारे जानने की यात्रा तब पूरी होती है जब हमें परम तत्व का बोध हो जाता है। तत्त्वत हम सभी भेद रहित अस्तित्व हैं। यह सीखने की प्रक्रिया जीवन पर्यंत चलती रहती है। हमारे गुरुकुल से कोई डिग्री नहीं बल्कि दृष्टि प्राप्त होती है। यहां विषयों को पढ़ाया जाता है उन्हें समझाने के लिए तथा विषयों से दूर रहने का प्रशिक्षण भी दिया जाता है। ऐसे प्रशिक्षण का लक्ष्य होता है, आध्यात्मिक जीवन का विकास और धर्म संरक्षित, निर्देशित व्यवहारिक जीवन की नीव रखना | हमारी चिंतन पद्धति उर्ध्वगामी और आधुनिक अर्थों में वैज्ञानिक है। हमने वस्तुओं के विज्ञान तक ही नहीं बल्कि संवेदना और भावना के विज्ञान का भी वृहद अध्ययन किया है। हमारे अध्ययन प्रक्रिया में स्वाध्याय अभ्यास और प्रदर्शन का समावेश है। हमारी परीक्षा में ज्ञान की परीक्षा है जानकारी की नहीं। सफलता का पैमाना केवल व्यक्तित्व और व्यवहार ही है। जीवन को शून्य में नहीं सहअस्तित्व में देखने की हमारी संकल्पना हमें प्रकृति का भोक्ता नहीं सहभागी बनाती है।
             </p>
           </div>
-
-          
-          
         </div>
-      </div> */}
 
-<div className="bg-white py-10">
-  <div className="shadow-lg p-8 max-w-4xl mx-auto text-center" style={{ maxHeight: '80vh', overflowY: 'auto' }}>
-    <div className="text-gray-800 space-y-6 text-lg">
+        {/* Gokul Section */}
+        <div className="h-screen flex items-center justify-center sticky top-0" style={{ fontFamily: 'Gowun Batang, serif' }}>
+          <div className="relative z-10 shadow-lg bg-neutral-900 rounded-xl h-4/6 p-8 max-w-4xl mx-auto text-center">
+            <h1 className="text-lime-400 text-6xl font-thin mb-10 relative z-10">
+              गोकुल Gokul
+            </h1>
+            <p className='text-lg'>
+              मनुष्य का प्रकृति के साथ परस्पर निर्भरता का संबंध है और इस जैविक संबंध का संयोजक है गोवंश | गोवंश की महिमा का ही प्रभाव है कि हमारी धार्मिक, सांस्कृतिक और भौतिक उपलब्धियां का श्रेय गोवंश को ही देते हुए हमारे ऋषि मुनियों ने गाय को माता कहते हुए इनको देवों के लिए भी पूज्य बना दिया। मनुष्य जाति के प्रति कल्याण की भावना और संवेदना से युक्त गोवंश को हम केवल दूध देने वाला पशु कह कर अपनी ही अज्ञानता का परिचय देते हैं | हमारी अज्ञानता का प्रभाव हमारे भूत, वर्तमान और भविष्य पर पड़ता है। आज आधुनिक वैज्ञानिक खोजों ने गोवंश के प्रति हमारी प्राचीन, परंपरागत आस्था को प्रमाणित किया है और हमारी समझ को पुष्ट ही किया है। भारत के संपूर्ण सांस्कृतिक यात्रा का आधार गोवंश होने के कारण ही हमारी संस्कृति को ऋषि और कृषि संस्कृति भी कहा जाता है। गोवंश का संरक्षण हमारी अपनी माटी का संरक्षण तो है ही साथ-साथ यह हमारी अर्थव्यवस्था का संवर्धन भी है। भारतकी अर्थव्यवस्था का धुरी भी बन सकता है गोवंश संरक्षण। हमने अपने चिकित्सा शास्त्र को भी 'आयुर्वेद' कहकर अर्थ प्रकट किया है। गोवंश का संरक्षण करके हम मनुष्य जाति के अस्तित्व पर छा रहे संकट का समाधान प्रस्तुत कर सकते हैं। हमारी गौशाला हमेशा अनुशासन, आत्म नियंत्रण की सीख लेकर समृद्धि की राह दिखाती है और हमें स्वावलंबी बनाकर स्वराज की नींव रखती है। इस प्रकार हम राज नहीं रामराज्य अर्थात स्वराज की व्यवस्था को दृढ़ता प्रदान करते हैं।
+            </p>
+          </div>
+        </div>
 
-      <h1 className="text-red-600 text-6xl font-thin relative z-10">
-      गुरूकुल Gurukul
-
-      </h1> 
-      <p>
-        Gurukul represents the ancient form of education where learning is imparted under the guidance of a guru. 
-        It emphasizes discipline, respect, and spiritual growth, providing a holistic development for students.
-      </p>
-
-      <h1 className="text-red-600 text-6xl font-thin relative z-10">
-        गोकुल Gokul
-      </h1>
-      <p>
-        Gokul is the land of love and devotion, where Lord Krishna spent his childhood. It signifies harmony, 
-        joy, and a way of life that centers around compassion and community.
-      </p>
-
-      <h1 className="text-red-600 text-6xl font-thin relative z-10">
-        देवकुल Devkul
-      </h1>
-      <p>
-        Devkul embodies divinity and wisdom, representing the highest pursuit of knowledge and enlightenment. 
-        It is a place where spiritual and intellectual growth is achieved through divine teachings.
-      </p>
-
-    </div>
-  </div>
-</div>
-
-
+        {/* Devkul Section */}
+        <div className="h-screen flex items-center justify-center sticky top-0" style={{ fontFamily: 'Gowun Batang, serif' }}>
+          <div className="relative z-10 shadow-lg bg-neutral-900 rounded-xl h-4/6 p-8 max-w-4xl mx-auto text-center">
+            <h1 className="text-lime-400 text-6xl font-thin mb-10 relative z-10">
+              देवकुल Devkul
+            </h1>
+            <p className='text-lg'>
+              देवालय क्यों? यह प्रश्न भारत में पूछ कर स्वयं को ज्ञानी सिद्ध करने के प्रयास में संलग्न लोगों की बुद्धि पर अधिकतम प्रतिक्रिया केवल दया भाव प्रकट करना ही हो सकता है। सोमनाथ की पराजय का दंश सदियों तक झेलने के बाद उसके पुनर्निर्माण की प्रसन्नता का अनुमान भी ऐसी बुद्धि के लोग नहीं लगा सकते हैं। राम मंदिर की प्रतिष्ठा से भारत के जन- मन के उत्साह का सहज अनुमान लगाकर यह बात प्रमाणिकता से कही जा सकती है कि भारत में देवालयों का स्थान किसी भी अन्य प्रतिष्ठान से अधिक ही है। देवालय हमारी अस्मिता के प्रतीक हैं, हमारी आस्था के प्रतीक है, हमारे समाज जीवन की धुरी है। हमारे देवालय हमारे अस्तित्व की दृढ़ता और निरंतरता की प्रतिभूतियाँ हैं, इसीलिए तो विधर्मियों ने हमारे देवालयों को ही निशाना बनाया और इनको तोड़कर हमारा मान मर्दन किया। देवालयों में जाकर, हम स्वयं को समर्पित कर भाव- कुभाव के लिए क्षमा प्रार्थना करते हुए अपने मंगल की कामना करते हैं। देवालयों की घंटाध्वनि हमें एकता के सूत्र में बांधती है तथा सामूहिक प्रार्थना हमें सामाजिक जीवन को संस्कृति का साक्षात मूर्तरूप बनाती है। देवालयों का पुनर्जीवन, संरक्षण, संवर्धन और प्रतिष्ठा से हम भारत की भावी पीढ़ी को संस्कारवान और सामर्थ्यवान बनाने के पथ पर अग्रसर कर सकेंगे।
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

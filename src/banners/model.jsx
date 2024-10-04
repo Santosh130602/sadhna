@@ -18,7 +18,7 @@ const Modal = ({ isOpen, onClose }) => {
   };
 
   const handleRegisterClick = () => {
-    navigate('/donate');
+    navigate('/vayam-program');
   };
 
   return (

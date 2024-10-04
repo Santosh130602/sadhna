@@ -29,3 +29,13 @@
 .blink-animation {
   animation: blink 1s infinite;
 }
+
+
+
+@media screen and (max-width: 1100px) {
+  .head-class {
+    display: none;
+  }
+}
+
+

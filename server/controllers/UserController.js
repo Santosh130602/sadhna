@@ -4,6 +4,9 @@ const bcrypt = require("bcrypt")
 const { generateToken } = require("../middleware/auth")
 const Transaction = require("../models/transition")
 const Contact = require("../models/contact")
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+
 
 
 const register = asyncHandler(async (req, res) => {
@@ -156,70 +159,248 @@ const changePassword = asyncHandler(async (req, res) => {
 })
 
 
-// const getLikedMovies = asyncHandler(async (req, res) => {
-//     try {
-//         const user = await User.findById(req.user._id).populate("likedMovies")
 
-//         if (user) {
-//             res.json(user.likedMovies)
-//         }
-//         else {
-//             res.status(404);
-//             throw new Error("user not found");
-//         }
 
-//     } catch (error) {
-//         res.status(400).json({ message: error.message })
+// router.post('/forgot-password', async (req, res) => {
+
+// const forgotPassword = async (req,res) =>{
+
+//     const { email } = req.body;
+//     const user = await User.findOne({ email });
+  
+//     if (!user) {
+//       return res.status(400).send('User with this email does not exist.');
 //     }
-// })
+  
+//     const token = crypto.randomBytes(32).toString('hex');
+//     user.resetToken = token;
+//     user.tokenExpiration = Date.now() + 3600000; // Token valid for 1 hour
+//     await user.save();
+  
+//     // Send email
+//     const transporter = nodemailer.createTransport({
+//       service: 'gmail',
+//       auth: {
+//         user: 'your-email@gmail.com',
+//         pass: 'your-email-password',
+//       },
+//     });
+  
+//     const mailOptions = {
+//       from: 'your-email@gmail.com',
+//       to: user.email,
+//       subject: 'Password Reset',
+//       text: `Click this link to reset your password: http://localhost:3000/reset-password/${token}`,
+//     };
+  
+//     transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) {
+//         return res.status(500).send('Error sending email.');
+//       }
+//       res.send('Password reset link sent to your email.');
+//     });
+//   };
 
-// const addLikedMovies = asyncHandler(async (req, res) => {
-//     const { movieId } = req.body;
+
+
+// const forgotPassword = async (req, res) => {
 //     try {
-//         const user = await User.findById(req.user._id);
-//         if (user) {
-//             // check if movie already liked 
-//             if (user.likedMovies.includes(movieId)) {
-//                 res.status(400);
-//                 throw new Error("Movie already liked");
-//             }
+//       const { email } = req.body;
+  
+//       // Check if user exists
+//       const user = await User.findOne({ email });
+//       if (!user) {
+//         return res.status(400).send('User with this email does not exist.');
+//       }
+  
+//       // Create reset token and expiration time
+//       const token = crypto.randomBytes(32).toString('hex');
+//       User.resetToken = crypto.createHash('sha256').update(token).digest('hex'); // Store hashed token in DB for security
+//       User.tokenExpiration = Date.now() + 3600000; // Token valid for 1 hour
+//       await User.save();
+  
+//       // Create transporter for sending email
+//       const transporter = nodemailer.createTransport({
+//         service: 'gmail',
+//         auth: {
+//           user: process.env.EMAIL,  // Use environment variables
+//           pass: process.env.EMAIL_PASSWORD,  // Use environment variables
+//         },
+//       });
+  
+//       // Email message configuration
+//       const mailOptions = {
+//         from: process.env.EMAIL,
+//         to: user.email,
+//         subject: 'Password Reset',
+//         text: `Click this link to reset your password: http://localhost:3000/reset-password/${token}`,
+//       };
+  
 
-//             user.likedMovies.push(movieId);
-//             await user.save();
-//             res.json(user.likedMovies)
-
+//       // Send the email
+//       transporter.sendMail(mailOptions, (error, info) => {
+//         if (error) {
+//           console.error('Error sending email:', error);
+//           return res.status(500).send('Error sending email.');
 //         }
-//         else {
-//             res.status(404)
-//             throw new Error("user not found")
-//         }
-
+//         res.status(200).send('Password reset link sent to your email.');
+//       });
+  
 //     } catch (error) {
-//         res.status(400).json({ message: error.message })
+//       console.error('Error in forgot password:', error);
+//       res.status(500).send('Server error, please try again later.');
 //     }
-// })
+//   };
 
 
-// delete all liked movie
+
+const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    // Check if user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).send('User with this email does not exist.');
+    }
+
+    // Create reset token and expiration time
+    const token = crypto.randomBytes(32).toString('hex');
+    user.resetToken = crypto.createHash('sha256').update(token).digest('hex'); // Store hashed token in DB for security
+    user.tokenExpiration = Date.now() + 3600000; // Token valid for 1 hour
+
+    // Save the updated user document
+    await user.save();
+
+    // Create transporter for sending email
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.MAIL_URL,  
+        pass: process.env.EMAIL_PASSWORD,  
+      },
+    });
+
+    // Email message configuration
+    const mailOptions = {
+      from: process.env.MAIL_URL,
+      to: user.email,
+      subject: 'Password Reset',
+      text: `Click this link to reset your password: http://localhost:3000/reset-password/${token}`,
+    };
+
+    // Send the email
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+        return res.status(500).send('Error sending email.');
+      }
+      res.status(200).send('Password reset link sent to your email.');
+    });
+
+  } catch (error) {
+    console.error('Error in forgot password:', error);
+    res.status(500).send('Server error, please try again later.');
+  }
+};
 
 
-// const deleteLikedMovies = asyncHandler(async (req, res) => {
-//     try {
-//         const user = await User.findById(req.user._id)
-//         //  if user exist delete all movies
-//         if (user) {
-//             user.likedMovies = []
-//             await user.save()
-//             res.json({ message: "All liked movies deleted successfully" })
-//         } else {
-//             res.status(404)
-//             throw new Error("user not found")
-//         }
 
-//     } catch (error) {
-//         res.status(400).json({ message: error.message })
+
+
+
+//   const passwordReset = async(req,res,next) =>{
+
+//     const 
+
+//   }
+
+
+// Controller function for password reset
+// const passwordReset = async (req, res) => {
+//   const { token } = req.params;  // Get the token from the URL
+//   const { password, confirmPassword } = req.body; // Get password and confirmPassword from frontend
+
+//   try {
+//     // Verify token
+//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+//     const userId = decoded.id;
+
+//     // Find user by ID
+//     const user = await User.findById(userId);
+
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found." });
 //     }
-// })
+
+//     // Check if passwords match
+//     if (password !== confirmPassword) {
+//       return res.status(400).json({ message: "Passwords do not match." });
+//     }
+
+//     // Hash the new password
+//     const hashedPassword = await bcrypt.hash(password, 10);
+
+//     // Update the user's password in the database
+//     user.password = hashedPassword;
+//     await user.save();
+
+//     return res.status(200).json({ message: "Password has been successfully reset." });
+//   } catch (error) {
+//     return res.status(500).json({ message: "Error resetting password.", error });
+//   }
+// };
+
+
+
+
+const passwordReset = async (req, res) => {
+    const { token } = req.params;
+    const { password, confirmPassword } = req.body;
+  
+    try {
+      // Verify token
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const userId = decoded.id;
+  
+      // Find user by ID
+      const user = await User.findById(userId);
+      if (!user) {
+        return res.status(404).json({ message: "User not found." });
+      }
+  
+      // Check if passwords match
+      if (password !== confirmPassword) {
+        return res.status(400).json({ message: "Passwords do not match." });
+      }
+  
+      // Hash the new password
+      const hashedPassword = await bcrypt.hash(password, 10);
+  
+      // Update the user's password in the database
+      user.password = hashedPassword;
+      await user.save();
+  
+      return res.status(200).json({ message: "Password has been successfully reset." });
+    } catch (error) {
+      return res.status(500).json({ message: "Error resetting password.", error });
+    }
+  };
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -274,10 +455,10 @@ const getTotalRegisteredCandidates = async (req, res) => {
 };
 
 const submitContact = asyncHandler(async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, phone, email, message } = req.body;
 
   try {
-    const newContact = new Contact({ name, email, message });
+    const newContact = new Contact({ name, phone, email, message });
     await newContact.save();
     res.status(201).json({ message: 'Contact submitted successfully!', contact: newContact });
   } catch (error) {
@@ -303,4 +484,4 @@ const getAllContacts = async (req, res) => {
 
 
 
-module.exports = { register, loginUser, updateUserProfile, deleteUserProfile, changePassword, getUser, deleteUsers,getTotalRegisteredCandidates, submitContact, getAllContacts};
+module.exports = { register, loginUser, updateUserProfile, deleteUserProfile, changePassword, getUser, deleteUsers,getTotalRegisteredCandidates, submitContact, getAllContacts, forgotPassword, passwordReset};

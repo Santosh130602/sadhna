@@ -40,14 +40,28 @@ const InternshipProgram = () => {
     },
   ];
 
+  // const handleRegisterClick = () => {
+  //   navigate('/internship-form');
+  // };
+
+
   const handleRegisterClick = () => {
-    navigate('/internship-form');
+    const token = localStorage.getItem('token'); // Replace with your auth token check
+    if (token) {
+      // If logged in, navigate to the Vayam form
+      navigate('/internship-form');
+    } else {
+      // If not logged in, navigate to the login page
+      navigate('/login');
+    }
   };
+
+
 
   return (
     <div className="relative ">
       <div
-        className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative"
+        className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative inset-0 -z-10"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0 bg-black opacity-80"></div>
@@ -59,52 +73,46 @@ const InternshipProgram = () => {
         </h1>
       </div>
 
-      <div className="container mx-auto px-4 py-12" style={{ fontFamily: 'Eczar, serif' }}>
-        <div className="md:w-1/2 mx-auto text-left mb-16 text-center" >
-          <h2 className="text-5xl font-bold mb-6" >"वयम्" यथारूप</h2>
-          <p className="text-lg  leading-relaxed">
-            'अहं' का विलोम नहीं विस्तार है वयम्।<br />
-            'अहम् ब्रह्मास्मि' से 'तत् त्वमसि' की यात्रा है वयम्।<br />
-            दैवी शक्तियों का सार है वयम्।<br />
-            सज्जन वृत्तियों की पुकार है वयम्।<br />
-            शुभ संकल्पों का आधार है वयम्।<br />
-            मानवता का उद्धार है वयम्।<br />
-            सुग्रीव और विभीषण का राम है वयम्।<br />
-            सीता का वरदान है वयम्।<br />
-            भारत का सामूहिक गान है वयम्।<br />
-            भविष्य का उनवान है वयम्।<br />
-            कल आज और बिहान है वयम्।<br />
-            जय- जवान, जय- किसान है वयम्।<br />
-            जय- धर्म, जय- विज्ञान है वयम्।<br />
-            सनातन का उत्थान है वयम्।<br />
-          </p>
-        </div>
+      <div className="bg-yellow-100 py-10">
+        <div className="bg-neutral-900 shadow-lg p-8 max-w-4xl rounded-xl mx-auto text-center " style={{ maxHeight: '80vh', overflowY: 'auto' }}>
+          <div className=" space-y-6 text-lg">
+            <h1 className="text-yellow-400 text-4xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>
+              Internship Program
+            </h1>
 
-        <div className="mt-16">
-          <h2 className="text-4xl font-bold text-center mb-12">"वयम्" के कार्यक्रम</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-2xl font-semibold mb-4">{program.title}</h3>
-                <p className="text-gray-700 mb-4">{program.description}</p>
-                <ul className="list-disc flex gap-8 pl-5 text-gray-700">
-                  {program.points.map((point, idx) => (
-                    <li key={idx}>{point}</li>
-                  ))}
+            <div style={{ fontFamily: 'Gowun Batang, serif' }}>
+              <div className='text-left'>
+                <p className='text-orange-200 font-bold text-2xl'></p>
+                <p className='text-orange-50'>आगामी महाकुंभ-2025 प्रयागराज में साधनाश्री कुटुंब द्वारा आयोजित होने वाले कार्यक्रम 'वयम्' की सफलता में सहयोगी बनाने के लिए साधनाश्री कुटुंब अपने 'इंटर्नशिप प्रोग्राम' में आप सभी को आमंत्रित करते हुए उत्साहित है। आप हमारे साथ नीचे दिए गए इंटर्नशिप कार्यक्रमों में से किसी एक के साथ जुड़कर साधनाश्री कुटुंब का हिस्सा बन सकते हैं।</p>
+              </div>
+
+              <div className='text-left text-orange-50'>
+                <p className='text-orange-200 font-bold text-2xl'></p>
+                <ul className='list-disc mt-3 list-inside'>
+                  <li>वयम वॉलन्टियर</li>
+                  <li>मॉनिटरिंग</li>
+                  <li>योग वॉलंटियर</li>
+                  <li>योग इस्ट्रक्टर</li>
+                  <li>आयुर्वेद इंस्ट्रक्टर</li>
                 </ul>
               </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="flex justify-center mt-20">
-          <button
-            onClick={handleRegisterClick}
-            className="flex items-center gap-4 bg-red-500 rounded text-white font-semibold py-2 px-8 
+              <div className="flex justify-center mt-20">
+                <button
+                  onClick={handleRegisterClick}
+                  className="flex items-center gap-4 bg-red-500 rounded text-white font-semibold py-2 px-8 
                       hover:bg-red-600 hover:scale-105 transition-transform duration-300" style={{ fontFamily: 'Gowun Batang, serif' }}
-          >
-            REGISTER <IoArrowForwardOutline className="font-semibold" />
-          </button>
+                >
+                  REGISTER <IoArrowForwardOutline className="font-semibold" />
+                </button>
+              </div>
+
+
+            </div>
+          </div>
+
+        
+
         </div>
       </div>
     </div>

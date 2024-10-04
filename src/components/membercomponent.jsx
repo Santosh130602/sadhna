@@ -10,28 +10,31 @@ import member4 from '../assets/member7.png';
 const members = [
   {
     id: 1,
-    name: 'प्रेम भूषण जी महाराज',
-    position: 'प्रमुख संरक्षक',
-    image: member1,
+    name: 'शिवम भूषण',
+    position: 'प्रमुख',
+    image: member4,
   },
   {
     id: 2,
-    name: 'आचार्य रामबाबू पांडेय',
-    position: 'प्रमुख मार्गदर्शक',
-    image: member2,
-  },
-  {
-    id: 3,
     name: 'अरविंद कुमार पांडेय',
     position: 'संयोजक',
     image: member3,
   },
   {
-    id: 4,
-    name: 'शिवम भूषण',
-    position: 'प्रमुख',
-    image: member4,
+    id: 3,
+    name: 'आचार्य रामबाबू पांडेय',
+    position: 'प्रमुख मार्गदर्शक',
+    image: member2,
   },
+  {
+    id: 4,
+    name: 'प्रेम भूषण जी महाराज',
+    position: 'प्रमुख संरक्षक',
+    image: member1,
+  }
+  
+  
+  
   // Add more members as needed
 ];
 
@@ -51,6 +54,7 @@ const MemberComponent = () => {
 
       {/* Member Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8"> */}
         {members.map((member) => (
           <div
             key={member.id}

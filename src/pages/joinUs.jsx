@@ -15,7 +15,7 @@ const JoinUs = () => {
     return (
         <div className="relative">
             {/* Header Section */}
-            <div className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative"
+            <div className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative inset-0 -z-10"
                 style={{
                     backgroundImage: `url(${backgroundImage})`,
                 }}

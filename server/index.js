@@ -6,9 +6,13 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const database = require("./config/database");
 
+
 const userRouter = require("./routers/UserRouter");
-// const paymentRoutes = require("./routers/paymentRoute");
 const joiningRoutes = require("./routers/joiningForm")
+const internRoute = require("./payment/internship")
+const intrRoute = require("./routers/internRoute")
+
+
 const { errorHandler } = require("./middleware/errorMiddleware");
 
 // Initialize the Express app
@@ -35,6 +39,9 @@ app.get('/', (req, res) => {
 // Routes
 app.use("/api/users", userRouter);
 app.use("/api/join",joiningRoutes);
+app.use("/api/intern",internRoute)
+app.use("/api/user-payment",intrRoute);
+
 // app.use("/api/payment", paymentRoutes);
 
 

@@ -6,6 +6,7 @@ import EventsBanner from '../banners/eventsBanner';
 import SupportBanner from '../banners/supports';
 import Modal from '../banners/model'; 
 import MemberComponent from '../components/membercomponent';
+import bg from "../assets/bg6.jpeg"; 
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -20,10 +21,11 @@ function Home() {
   }, []);
 
   return (
+    // <div className='mt-[-110px]'>
     <div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
       <HeroBanner />
-      <EventsBanner />
+      <EventsBanner  />
       <SupportBanner />
       <MemberComponent/>
     </div>

@@ -1,5 +1,5 @@
 const express = require("express");
-const {register, loginUser, updateUserProfile,deleteUserProfile, changePassword, getUser,deleteUsers, submitContact, getAllContacts} = require("../controllers/UserController")
+const {register, loginUser, updateUserProfile,deleteUserProfile, changePassword, getUser,deleteUsers, submitContact, getAllContacts, forgotPassword, passwordReset} = require("../controllers/UserController")
 const {protect,admin} = require("../middleware/auth")
 const router = express.Router()
 
@@ -10,6 +10,9 @@ router.route('/delete-user').delete(protect, deleteUserProfile)
 router.route('/change-password').put(protect, changePassword)
 router.route('/contact').post(submitContact)
 router.route('/getcontact-details').get(protect,admin,getAllContacts)
+
+router.route('/forgot-password').post(forgotPassword)
+router.route('/reset-password/:token').post(passwordReset)
 
 
 // Admin routes

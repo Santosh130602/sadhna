@@ -6,7 +6,7 @@ const LegalAdvisor = () => {
   return (
     <div className="relative">
 
-      <div className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative" style={{
+      <div className="h-64 bg-fixed bg-cover bg-center flex items-center justify-center relative inset-0 -z-10" style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
       >
@@ -18,21 +18,21 @@ const LegalAdvisor = () => {
       </div>
 
       {/* Main Content Section */}
-      <div className="bg-white py-10">
-        <div className=" shadow-lg p-8 max-w-4xl mx-auto text-center " style={{ maxHeight: '80vh', overflowY: 'auto' }}>
-          <div className="text-gray-800 space-y-6 text-lg">
-            <h1 className="text-black text-4xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>
+      <div className="bg-yellow-100 py-10">
+        <div className="bg-neutral-900 shadow-lg p-8 max-w-4xl rounded-xl mx-auto text-center " style={{ maxHeight: '80vh', overflowY: 'auto' }}>
+          <div className=" space-y-6 text-lg">
+            <h1 className="text-yellow-400 text-4xl font-thin relative z-10" style={{ fontFamily: 'Gowun Batang, serif' }}>
               SUPRA LEGALS
             </h1>
 
             <div style={{ fontFamily: 'Gowun Batang, serif' }}>
               <div className='text-left'>
-                <p className='text-red-500 font-bold text-2xl'>Address:</p>
-                <p>618/256A/1 Sector no. 7 Jhulelal Nagar Lukerganj Prayagraj Near SBI Bank.</p>
+                <p className='text-orange-200 font-bold text-2xl'>Address:</p>
+                <p className='text-orange-50'>618/256A/1 Sector no. 7 Jhulelal Nagar Lukerganj Prayagraj Near SBI Bank.</p>
               </div>
-              <div className='text-left'>
-                <p className='text-red-500 font-bold text-2xl'>Phone:</p>
-                <p>9415769175, 9264989498</p>
+              <div className='text-left text-orange-50'>
+                <p className='text-orange-200 font-bold text-2xl'>Phone:</p>
+                <p >9415769175, 9264989498</p>
               </div>
 
             </div>
